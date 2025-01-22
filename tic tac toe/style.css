@@ -1,0 +1,78 @@
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle, #ff007f, #590fb7, #1e90ff);
+    color: white;
+    text-align: center;
+}
+
+h1#title {
+    font-size: 4rem;
+    color: #ffeb3b;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    animation: glow 1.5s infinite alternate;
+}
+
+h5#stats {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 15px;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #1f1f1f, #474747);
+    border-radius: 15px;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6), -6px -6px 12px rgba(255, 255, 255, 0.2);
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+    background: linear-gradient(145deg, #ff007f, #1e90ff);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.cell:active {
+    transform: scale(0.9);
+    box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.5), inset -4px -4px 6px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 30px #ff007f, 0 0 40px #ff007f;
+    }
+    to {
+        text-shadow: 0 0 20px #ffeb3b, 0 0 30px #ffeb3b, 0 0 40px #1e90ff, 0 0 50px #1e90ff;
+    }
+}
+
+.cell[style*="pointer-events: none"] {
+    background-color: #333;
+    color: #aaa;
+    cursor: not-allowed;
+    transform: none;
+}

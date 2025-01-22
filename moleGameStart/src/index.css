@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  user-select: none;
+  background-color: green;
+}
+
+.mole:hover {
+  cursor: url('./assets/Hammer.cur'), auto;
+}
+.score{
+  font-size: 2rem; /* גודל הפונט */
+  font-weight: bold; /* הפונט יהיה מודגש */
+  color: #ff6347; /* צבע כתום-אדום */
+  text-align: center; /* מרכז את הטקסט */
+  background-color: rgba(0, 0, 0, 0.1); /* צבע רקע שקוף כהה */
+  border-radius: 10px; /* עיגול פינות */
+  padding: 10px 20px; /* רווח פנימי */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* צל */
+  transition: transform 0.3s ease; /* אנימציה חלקה לשינוי */
+}
